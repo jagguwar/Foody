@@ -1,9 +1,10 @@
-package com.app.foody
+package com.app.foody.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
+import com.app.foody.R
 
 class MainActivity : AppCompatActivity() {
 
