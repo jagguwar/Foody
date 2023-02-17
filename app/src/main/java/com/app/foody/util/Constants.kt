@@ -1,4 +1,4 @@
-package com.app.foody
+package com.app.foody.util
 
 class Constants {
 
