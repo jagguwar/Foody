@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.ui.AppBarConfiguration
 import com.app.foody.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController

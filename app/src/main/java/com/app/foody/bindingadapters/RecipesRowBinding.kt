@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import coil.load
 import com.app.foody.R
 
 class RecipesRowBinding {
@@ -20,6 +21,14 @@ class RecipesRowBinding {
         @JvmStatic
         fun setNumberOfMinutes(textView: TextView, minutes: Int) {
             textView.text = minutes.toString()
+        }
+
+        @BindingAdapter("loadImageFromUrl")
+        @JvmStatic
+        fun loadImageFromUrl(imageView: ImageView, imageUrl: String) {
+            imageView.load(imageUrl) {
+                crossfade(600)
+            }
         }
 
         @BindingAdapter("applyVeganColor")
