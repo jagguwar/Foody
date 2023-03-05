@@ -30,4 +30,7 @@
     <string name="meal_type">Meal Type</string>
     <string name="apply">Apply</string>
     <string name="search">Search</string>
+    <string name="cheap">Cheap</string>
+    <string name="healthy">Healthy</string>
+    <string name="diary_free">Diary Free</string>
 </resources>
