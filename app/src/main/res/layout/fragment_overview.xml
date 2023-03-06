@@ -156,7 +156,7 @@
         app:layout_constraintTop_toTopOf="@+id/gluten_free_imageView" />
 
     <ImageView
-        android:id="@+id/diary_free_imageView"
+        android:id="@+id/dairy_free_imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -166,15 +166,15 @@
         app:tint="@color/darkGray" />
 
     <TextView
-        android:id="@+id/diary_free_textView"
+        android:id="@+id/dairy_free_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/diary_free"
+        android:text="@string/dairy_free"
         android:textColor="@color/darkGray"
-        app:layout_constraintBottom_toBottomOf="@+id/diary_free_imageView"
-        app:layout_constraintStart_toEndOf="@+id/diary_free_imageView"
-        app:layout_constraintTop_toTopOf="@+id/diary_free_imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/dairy_free_imageView"
+        app:layout_constraintStart_toEndOf="@+id/dairy_free_imageView"
+        app:layout_constraintTop_toTopOf="@+id/dairy_free_imageView" />
 
     <ImageView
         android:id="@+id/healthy_imageView"
