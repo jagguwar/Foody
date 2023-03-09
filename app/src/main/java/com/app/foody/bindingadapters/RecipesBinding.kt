@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.app.foody.data.database.RecipesEntity
+import com.app.foody.data.database.entities.RecipesEntity
 import com.app.foody.models.FoodRecipe
 import com.app.foody.util.NetworkResult
 
