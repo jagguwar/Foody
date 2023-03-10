@@ -30,13 +30,13 @@ class MainViewModel @ViewModelInject constructor(
             repository.local.insertRecipes(recipesEntity)
         }
 
-    private fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity) {
+    fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertFavoriteRecipe(favoritesEntity)
         }
     }
 
-    private fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity) {
+    fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.deleteFavoriteRecipe(favoritesEntity)
         }
@@ -49,6 +49,7 @@ class MainViewModel @ViewModelInject constructor(
     }
 
     /** RETROFIT */
+
     val recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
     var searchedRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
 
