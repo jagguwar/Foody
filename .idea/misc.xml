@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.2235" />
+        <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/ic_share.xml" value="0.234" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/ic_splash_screen_light.xml" value="0.234" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/icrestaurant.xml" value="0.234" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/radiant_overlay.xml" value="0.234" />
@@ -25,6 +26,7 @@
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/menu/details_menu.xml" value="0.3828125" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/menu/favorite_recipes_menu.xml" value="0.3828125" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/menu/favorites_contextual_menu.xml" value="0.3828125" />
+        <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/menu/food_joke_menu.xml" value="0.3828125" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/menu/recipes_menu.xml" value="0.3828125" />
       </map>
     </option>
