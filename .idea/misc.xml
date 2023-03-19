@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable-xxxhdpi/ic_food_joke_background_dark.xml" value="0.234" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.2235" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/ic_share.xml" value="0.234" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/ic_splash_screen_light.xml" value="0.234" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/icrestaurant.xml" value="0.234" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/drawable/radiant_overlay.xml" value="0.234" />
+        <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/layout-night/fragment_food_joke.xml" value="0.3828125" />
+        <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/layout-night/layout.xml" value="0.3828125" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/layout/activity_details.xml" value="0.17933130699088146" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Apps-Estudos/Foody/app/src/main/res/layout/ecipes_bottom_sheet.xml" value="0.5" />
