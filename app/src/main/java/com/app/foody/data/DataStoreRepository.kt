@@ -1,8 +1,12 @@
 package com.app.foody.data
 
 import android.content.Context
-import androidx.datastore.DataStore
-import androidx.datastore.preferences.*
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.emptyPreferences
+import androidx.datastore.preferences.core.preferencesKey
+import androidx.datastore.preferences.createDataStore
 import com.app.foody.util.Constants.Companion.DEFAULT_DIET_TYPE
 import com.app.foody.util.Constants.Companion.DEFAULT_MEAL_TYPE
 import com.app.foody.util.Constants.Companion.PREFERENCES_BACK_ONLINE
