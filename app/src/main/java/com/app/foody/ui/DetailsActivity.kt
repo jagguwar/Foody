@@ -18,6 +18,7 @@ import com.app.foody.ui.fragments.overview.OverviewFragment
 import com.app.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.app.foody.viewmodels.MainViewModel
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,23 +46,27 @@ class DetailsActivity : AppCompatActivity() {
         fragments.add(IngredientsFragment())
         fragments.add(InstructionsFragment())
 
-        val title = ArrayList<String>()
-        title.add("Overview")
-        title.add("Ingredients")
-        title.add("Instructions")
+        val titles = ArrayList<String>()
+        titles.add("Overview")
+        titles.add("Ingredients")
+        titles.add("Instructions")
 
         val resultBundle = Bundle()
         resultBundle.putParcelable(RECIPE_RESULT_KEY, args.result)
 
-        val adapter = PageAdapter(
+        val pageAdapter = PageAdapter(
             resultBundle,
             fragments,
-            title,
-            supportFragmentManager
+            this
         )
 
-        binding.viewPager.adapter = adapter
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
+        binding.viewPager2.apply {
+            adapter = pageAdapter
+        }
+
+        TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
+            tab.text = titles[position]
+        }.attach()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
