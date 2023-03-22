@@ -30,17 +30,6 @@ class RecipesRowBinding {
                 }
             }
         }
-        @BindingAdapter("setNumbersOfLikes")
-        @JvmStatic
-        fun setNumbersOfLikes(textView: TextView, likes: Int){
-            textView.text = likes.toString()
-        }
-
-        @BindingAdapter("setNumberOfMinutes")
-        @JvmStatic
-        fun setNumberOfMinutes(textView: TextView, minutes: Int) {
-            textView.text = minutes.toString()
-        }
 
         @BindingAdapter("loadImageFromUrl")
         @JvmStatic
