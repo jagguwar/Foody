@@ -92,4 +92,5 @@ class FoodJokeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

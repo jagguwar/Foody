@@ -11,6 +11,7 @@ import androidx.navigation.navArgs
 import com.app.foody.R
 import com.app.foody.adapters.PageAdapter
 import com.app.foody.data.database.entities.FavoritesEntity
+import com.app.foody.databinding.ActivityDetailsBinding
 import com.app.foody.ui.fragments.ingredients.IngredientsFragment
 import com.app.foody.ui.fragments.instructions.InstructionsFragment
 import com.app.foody.ui.fragments.overview.OverviewFragment
@@ -18,10 +19,11 @@ import com.app.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.app.foody.viewmodels.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_details.*
 
 @AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDetailsBinding
 
     private val args by navArgs<DetailsActivityArgs>()
     private val mainViewModel: MainViewModel by viewModels()
@@ -31,10 +33,11 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+        binding = ActivityDetailsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setSupportActionBar(toolbar)
-        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val fragments = ArrayList<Fragment>()
@@ -57,8 +60,8 @@ class DetailsActivity : AppCompatActivity() {
             supportFragmentManager
         )
 
-        viewPager.adapter = adapter
-        tabLayout.setupWithViewPager(viewPager)
+        binding.viewPager.adapter = adapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -69,7 +72,7 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun checkSavedRecipes(menuItem: MenuItem) {
-        mainViewModel.readFavoriteRecipes.observe(this, { favoritesEntity ->
+        mainViewModel.readFavoriteRecipes.observe(this) { favoritesEntity ->
             try {
                 for (recipeSaved in favoritesEntity) {
                     if (recipeSaved.result.id == args.result.id) {
@@ -83,7 +86,7 @@ class DetailsActivity : AppCompatActivity() {
             } catch (e: Exception) {
 
             }
-        })
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -123,7 +126,7 @@ class DetailsActivity : AppCompatActivity() {
 
     private fun showSnackbar(message: String) {
         Snackbar.make(
-            detailsLayout,
+            binding.detailsLayout,
             message,
             Snackbar.LENGTH_SHORT
         ).setAction("OK") {}
@@ -133,4 +136,5 @@ class DetailsActivity : AppCompatActivity() {
     private fun changeMenuItemColor(item: MenuItem, color: Int) {
         item.icon.setTint(ContextCompat.getColor(this, color))
     }
+
 }
