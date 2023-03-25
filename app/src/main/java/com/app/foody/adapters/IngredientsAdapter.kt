@@ -1,7 +1,6 @@
 package com.app.foody.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,15 +10,23 @@ import com.app.foody.databinding.IngredientsRowLayoutBinding
 import com.app.foody.models.ExtendedIngredient
 import com.app.foody.util.Constants.Companion.BASE_IMAGE_URL
 import com.app.foody.util.RecipesDiffUtil
+import java.util.*
 
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
 
     private var ingredientsList = emptyList<ExtendedIngredient>()
 
-    class MyViewHolder(val binding: IngredientsRowLayoutBinding): RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(val binding: IngredientsRowLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(IngredientsRowLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return MyViewHolder(
+            IngredientsRowLayoutBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -27,7 +34,11 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
             crossfade(600)
             error(R.drawable.ic_error_placeholder)
         }
-        holder.binding.ingredientName.text = ingredientsList[position].name.capitalize()
+        holder.binding.ingredientName.text = ingredientsList[position].name.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase(
+                Locale.ROOT
+            ) else it.toString()
+        }
         holder.binding.ingredientAmount.text = ingredientsList[position].amount.toString()
         holder.binding.ingredientUnit.text = ingredientsList[position].unit
         holder.binding.ingredientConsistency.text = ingredientsList[position].consistency

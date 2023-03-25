@@ -13,7 +13,11 @@ class FoodJokeBinding {
 
     companion object {
 
-        @BindingAdapter("readApiResponseForCardAndProgressBar", "readDatabaseForCardAndProgressBar", requireAll = true)
+        @BindingAdapter(
+            "readApiResponseForCardAndProgressBar",
+            "readDatabaseForCardAndProgressBar",
+            requireAll = false
+        )
         @JvmStatic
         fun setCardAndProgressVisibility(
             view: View,
@@ -39,11 +43,11 @@ class FoodJokeBinding {
                         is MaterialCardView -> {
                             view.visibility = View.VISIBLE
                             if (database.isNullOrEmpty()) {
-                                    view.visibility = View.INVISIBLE
-                                }
+                                view.visibility = View.INVISIBLE
                             }
                         }
                     }
+                }
                 is NetworkResult.Success -> {
                     when (view) {
                         is ProgressBar -> {
@@ -54,6 +58,7 @@ class FoodJokeBinding {
                         }
                     }
                 }
+                else -> {}
             }
         }
 

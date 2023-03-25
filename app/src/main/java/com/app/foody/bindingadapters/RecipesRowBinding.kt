@@ -1,5 +1,6 @@
 package com.app.foody.bindingadapters
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -26,7 +27,7 @@ class RecipesRowBinding {
                         RecipesFragmentDirections.actionRecipesFragmentToDetailsActivity(result)
                     recipeRowLayout.findNavController().navigate(action)
                 } catch (e: Exception) {
-
+                    Log.d("onRecipeClickListener", e.toString())
                 }
             }
         }

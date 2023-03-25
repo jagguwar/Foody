@@ -15,7 +15,7 @@ class RecipesBinding {
 
         @BindingAdapter("readApiResponse", "readDatabase", requireAll = true)
         @JvmStatic
-        fun handleReadDataErros(
+        fun handleReadDataErrors(
             view: View,
             apiResponse: NetworkResult<FoodRecipe>?,
             database: List<RecipesEntity>?

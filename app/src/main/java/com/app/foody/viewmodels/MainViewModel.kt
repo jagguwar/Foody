@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.os.Parcelable
 import androidx.lifecycle.*
 import com.app.foody.data.Repository
 import com.app.foody.data.database.entities.FavoritesEntity
@@ -24,10 +25,13 @@ class MainViewModel @Inject constructor(
     application: Application
 ) : AndroidViewModel(application) {
 
+    var recyclerViewState: Parcelable? = null
+
     /** ROOM DATABASE */
 
     val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
-    val readFavoriteRecipes: LiveData<List<FavoritesEntity>> = repository.local.readFavoriteRecipes().asLiveData()
+    val readFavoriteRecipes: LiveData<List<FavoritesEntity>> =
+        repository.local.readFavoriteRecipes().asLiveData()
     val readFoodJoke: LiveData<List<FoodJokeEntity>> = repository.local.readFoodJoke().asLiveData()
 
     private fun insertRecipes(recipesEntity: RecipesEntity) =

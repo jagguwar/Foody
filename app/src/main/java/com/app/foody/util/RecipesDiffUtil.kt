@@ -1,12 +1,11 @@
 package com.app.foody.util
 
 import androidx.recyclerview.widget.DiffUtil
-import com.app.foody.models.Result
 
 class RecipesDiffUtil<T>(
     private val oldList: List<T>,
     private val newList: List<T>
-): DiffUtil.Callback() {
+) : DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return oldList.size
     }
@@ -22,4 +21,5 @@ class RecipesDiffUtil<T>(
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldList[oldItemPosition] == newList[newItemPosition]
     }
+
 }

@@ -1,8 +1,6 @@
 package com.app.foody.bindingadapters
 
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
@@ -14,7 +12,7 @@ class FavoriteRecipesBinding {
 
     companion object {
 
-        @BindingAdapter("viewVisibility", "setData", requireAll = false)
+        @BindingAdapter("setVisibility", "setData", requireAll = false)
         @JvmStatic
         fun setVisibility(
             view: View,

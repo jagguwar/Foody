@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mainViewModel"
             type="com.app.foody.viewmodels.MainViewModel" />
+
         <variable
             name="mAdapter"
             type="com.app.foody.adapters.FavoriteRecipesAdapter" />
@@ -20,8 +22,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favoriteRecipesRecyclerView"
-            setVisibility="@{mainViewModel.readFavoriteRecipes}"
             setData="@{mAdapter}"
+            setVisibility="@{mainViewModel.readFavoriteRecipes}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"

@@ -2,6 +2,7 @@ package com.app.foody.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
@@ -90,7 +91,7 @@ class DetailsActivity : AppCompatActivity() {
                     }
                 }
             } catch (e: Exception) {
-
+                Log.d("DetailsActivity", e.message.toString())
             }
         }
     }
@@ -114,7 +115,7 @@ class DetailsActivity : AppCompatActivity() {
             )
         mainViewModel.insertFavoriteRecipe(favoritesEntity)
         changeMenuItemColor(item, R.color.yellow)
-        showSnackbar("Recipe saved")
+        showSnackBar("Recipe saved")
         savedRecipe = true
     }
 
@@ -126,11 +127,11 @@ class DetailsActivity : AppCompatActivity() {
             )
         mainViewModel.deleteFavoriteRecipe(favoritesEntity)
         changeMenuItemColor(item, R.color.white)
-        showSnackbar("Removed from Favorites")
+        showSnackBar("Removed from Favorites")
         savedRecipe = false
     }
 
-    private fun showSnackbar(message: String) {
+    private fun showSnackBar(message: String) {
         Snackbar.make(
             binding.detailsLayout,
             message,
@@ -140,11 +141,12 @@ class DetailsActivity : AppCompatActivity() {
     }
 
     private fun changeMenuItemColor(item: MenuItem, color: Int) {
-        item.icon.setTint(ContextCompat.getColor(this, color))
+        item.icon?.setTint(ContextCompat.getColor(this, color))
     }
 
     override fun onDestroy() {
         super.onDestroy()
         changeMenuItemColor(menuItem, R.color.white)
     }
+
 }

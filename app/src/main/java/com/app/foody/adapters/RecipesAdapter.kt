@@ -9,11 +9,12 @@ import com.app.foody.models.FoodRecipe
 import com.app.foody.models.Result
 import com.app.foody.util.RecipesDiffUtil
 
-class RecipesAdapter: RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
+class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
     private var recipes = emptyList<Result>()
 
-    class MyViewHolder(private val binding: RecipesRowLayoutBinding): RecyclerView.ViewHolder(binding.root) {
+    class MyViewHolder(private val binding: RecipesRowLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(result: Result) {
             binding.result = result
             binding.executePendingBindings()
@@ -47,4 +48,5 @@ class RecipesAdapter: RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
         recipes = newData.results
         diffUtilResult.dispatchUpdatesTo(this)
     }
+
 }
