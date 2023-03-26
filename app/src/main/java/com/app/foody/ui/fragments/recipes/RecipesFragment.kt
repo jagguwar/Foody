@@ -197,11 +197,13 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private fun showShimmerEffect() {
         binding.shimmerFrameLayout.startShimmer()
+        binding.shimmerFrameLayout.visibility = View.VISIBLE
         binding.recyclerView.visibility = View.GONE
     }
 
     private fun hideShimmerEffect() {
         binding.shimmerFrameLayout.stopShimmer()
+        binding.shimmerFrameLayout.visibility = View.GONE
         binding.recyclerView.visibility = View.VISIBLE
     }
 

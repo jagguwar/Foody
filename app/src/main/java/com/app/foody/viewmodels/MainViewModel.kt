@@ -90,7 +90,7 @@ class MainViewModel @Inject constructor(
                     offlineCacheRecipes(foodRecipe)
                 }
             } catch (e: Exception) {
-                recipesResponse.value = NetworkResult.Error("Recipes not found")
+                recipesResponse.value = NetworkResult.Error("No Recipes found")
             }
         } else {
             recipesResponse.value = NetworkResult.Error("No Internet Connection")
@@ -104,7 +104,7 @@ class MainViewModel @Inject constructor(
                 val response = repository.remote.searchRecipes(searchQuery)
                 searchedRecipesResponse.value = handleFoodRecipesResponse(response)
             } catch (e: Exception) {
-                searchedRecipesResponse.value = NetworkResult.Error("Recipes not found")
+                searchedRecipesResponse.value = NetworkResult.Error("No Recipes found")
             }
         } else {
             searchedRecipesResponse.value = NetworkResult.Error("No Internet Connection")
@@ -123,7 +123,7 @@ class MainViewModel @Inject constructor(
                     offlineCacheFoodJoke(foodJoke)
                 }
             } catch (e: Exception) {
-                foodJokeResponse.value = NetworkResult.Error("Recipes not found")
+                foodJokeResponse.value = NetworkResult.Error("No Recipes found")
             }
         } else {
             foodJokeResponse.value = NetworkResult.Error("No Internet Connection")
@@ -149,7 +149,7 @@ class MainViewModel @Inject constructor(
                 return NetworkResult.Error("API key limited")
             }
             response.body()!!.results.isNullOrEmpty() -> {
-                return NetworkResult.Error("Recipes not found")
+                return NetworkResult.Error("No Recipes found")
             }
             response.isSuccessful -> {
                 val foodRecipes = response.body()
