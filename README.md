@@ -17,3 +17,11 @@ para a nossa API Spoonacular.
 
 Implementamos também uma fonte de dados locais para que se possa salvar uma receita favorita
 e armazenar dados em cache na base de dados do dispositivo.
+
+## Features
+
+- Pesquisar receitas e filtra-las por tipo de refeição e dieta
+- Receitas detalhadas com foto, descrição, ingredientes e instruções
+- Adicionar receitas aos Favoritos
+- Receber uma piada sobre comida ao clicar em Food Joke
+- Suporte para Tema Escuro
