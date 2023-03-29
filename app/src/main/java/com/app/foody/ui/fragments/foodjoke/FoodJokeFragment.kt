@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class FoodJokeFragment : Fragment() {
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel by viewModels<MainViewModel>()
 
     private var _binding: FragmentFoodJokeBinding? = null
     private val binding get() = _binding!!
@@ -85,8 +85,8 @@ class FoodJokeFragment : Fragment() {
         lifecycleScope.launch {
             mainViewModel.readFoodJoke.observe(viewLifecycleOwner) { database ->
                 if (!database.isNullOrEmpty()) {
-                    binding.foodJokeTextView.text = database[0].foodJoke.text
-                    foodJoke = database[0].foodJoke.text
+                    binding.foodJokeTextView.text = database.first().foodJoke.text
+                    foodJoke = database.first().foodJoke.text
                 }
             }
         }

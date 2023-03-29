@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
 import com.app.foody.R
-import com.app.foody.adapters.PageAdapter
+import com.app.foody.adapters.PagerAdapter
 import com.app.foody.data.database.entities.FavoritesEntity
 import com.app.foody.databinding.ActivityDetailsBinding
 import com.app.foody.ui.fragments.ingredients.IngredientsFragment
@@ -57,7 +57,7 @@ class DetailsActivity : AppCompatActivity() {
         val resultBundle = Bundle()
         resultBundle.putParcelable(RECIPE_RESULT_KEY, args.result)
 
-        val pageAdapter = PageAdapter(
+        val pagerAdapter = PagerAdapter(
             resultBundle,
             fragments,
             this
@@ -65,7 +65,7 @@ class DetailsActivity : AppCompatActivity() {
 
         binding.viewPager2.isUserInputEnabled = false
         binding.viewPager2.apply {
-            adapter = pageAdapter
+            adapter = pagerAdapter
         }
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
