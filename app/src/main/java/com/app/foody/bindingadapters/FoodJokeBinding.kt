@@ -78,7 +78,7 @@ class FoodJokeBinding {
                 }
             }
             if (apiResponse is NetworkResult.Success) {
-                view.visibility = View.VISIBLE
+                view.visibility = View.INVISIBLE
             }
         }
 
