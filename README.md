@@ -43,3 +43,10 @@ e armazenar dados em cache na base de dados do dispositivo.
 <img src="https://user-images.githubusercontent.com/71939547/228863175-366786af-f6cf-4d40-aa81-767b23e8e5f4.png" width="300px" />
 </div>
 
+## Testando o aplicativo
+
+Baixe o APK para testar o app em seu smartphone ou emulador
+
+```bash
+  https://drive.google.com/uc?export=download&id=16Aeif4ej4pOtovBvoIxwZGOg9H_w9UPh
+```
